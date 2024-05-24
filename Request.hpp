@@ -5,18 +5,18 @@
 
 // Énumération pour représenter le statut de la requête
 enum class RequestStatus {
-    PENDING,     // En attente d'exécution
-    IN_PROGRESS, // En cours d'exécution
-    COMPLETED,   // Terminée
-    FAILED       // Une étape s'est mal passée
+    PENDING,     
+    IN_PROGRESS, 
+    COMPLETED,   
+    FAILED       
 };
 
-class Request { 
+class Request {
 private:
     long long int id;
-    std::string data; // Données de la requête
-    std::string type; // Type de la tâche à effectuer
-    RequestStatus status; // Statut de la requête
+    std::string data; 
+    std::string type; 
+    RequestStatus status; 
 
 public:
     Request(long long int id, const std::string& data, const std::string& type);

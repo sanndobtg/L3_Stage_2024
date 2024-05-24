@@ -1,24 +1,26 @@
 #ifndef SYSTEM_HPP
 #define SYSTEM_HPP
 
+#include "Component.hpp"
 #include "Request.hpp"
 #include "Response.hpp"
-#include "Component.hpp"
-#include "ConcreteComponent.hpp"
 
-// Classe System qui contient et gère les composants
 class System {
 private:
-    ConcreteComponent* componentA;
-    ConcreteComponent* componentB;
-    ConcreteComponent* componentC;
-    Component* entryComponent; // Point d'entrée du système
+    Component* componentA; 
+    Component* componentB; 
+    Component* componentC; 
+    Component* entryComponent;
 
 public:
-    System();
-     ~System(); // Ajoutez un destructeur pour nettoyer la mémoire
-    void setupComponents(); // Nouvelle méthode pour configurer les composants
-    Response execute(Request& request);
+    System(); 
+    ~System(); 
+
+    // Méthode pour initialiser et connecter les composants
+    void configure(); 
+    
+    // Méthode pour exécuter une requête à travers les composants
+    Response execute(Request& request); 
 };
 
 #endif // SYSTEM_HPP

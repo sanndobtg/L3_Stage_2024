@@ -9,7 +9,7 @@
 class Requester {
 private:
     System& system; // Référence vers le système complexe
-    Chronometre chronometre; // Chronomètre pour mesurer le temps de traitement
+    Chronometre chronometre;
 
 public:
     Requester(System& sys) : system(sys) {}

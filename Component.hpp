@@ -3,13 +3,16 @@
 
 #include "Request.hpp"
 #include "Response.hpp"
+#include <vector>
 
-// Interface de base pour les composants
 class Component {
 public:
     virtual ~Component() = default;
     virtual Response processRequest(const Request& request) = 0;
-    virtual void setNextComponent(Component* next) = 0;
+
+    // Méthodes pour gérer les ports d'entrée et de sortie
+    virtual void addInputPort(Component* component) = 0;
+    virtual void addOutputPort(Component* component) = 0;
 };
 
 #endif // COMPONENT_HPP
