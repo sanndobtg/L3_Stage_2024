@@ -3,13 +3,13 @@
 #include "System.hpp"
 
 void Requester::sendRequest(Request& request) {
-    System system;
     chronometre.setTE(); // Démarrer le chronomètre
     system.execute(request); // Exécution de la requête
     // La méthode execute doit mettre à jour le statut de la requête
     // à COMPLETED une fois qu'elle est traitée
     receiveResponse(request); // Simule la réception de la réponse
 }
+
 
 
 void Requester::receiveResponse(Request& request) {
@@ -22,6 +22,6 @@ void Requester::receiveResponse(Request& request) {
         std::cout << "Process Time: " << duration << " ms" << std::endl;
     } else {
         // Gérer les cas où la requête n'est pas complétée
-        std::cout << "requête pas traitée correctement." << std::endl;
+        std::cout << "Requête pas traitée correctement." << std::endl;
     }
 }

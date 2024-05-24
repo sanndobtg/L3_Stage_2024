@@ -1,7 +1,10 @@
+#include <iostream>
 #include <vector>
 #include "Request.hpp"
-#include "Requester.hpp"
+#include "Response.hpp"
 #include "IdGenerator.hpp"
+#include "System.hpp"
+#include "Requester.hpp"
 
 int main() {
     // Création d'un générateur d'ID pour les requêtes
@@ -15,13 +18,16 @@ int main() {
     requests.emplace_back(idGen.generateNextId(), "Donnée 2", "TypeB");
     requests.emplace_back(idGen.generateNextId(), "Donnée 3", "TypeC");
 
-    // Création d'un objet Requester
-    Requester requester;
+    // Création du système complexe
+    System system;
 
-    // Envoi de chaque requête et affichage du temps de traitement
+    // Création de l'objet Requester avec une référence vers le système
+    Requester requester(system);
+
+    // Envoi de chaque requête via l'objet Requester
     for (auto& req : requests) {
         requester.sendRequest(req);
     }
-
+    
     return 0;
 }

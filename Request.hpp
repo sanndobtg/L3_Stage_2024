@@ -11,7 +11,7 @@ enum class RequestStatus {
     FAILED       // Une étape s'est mal passée
 };
 
-class Request {
+class Request { 
 private:
     long long int id;
     std::string data; // Données de la requête

@@ -4,12 +4,16 @@
 #include "Request.hpp"
 #include "Response.hpp"
 #include "Chronometre.hpp"
+#include "System.hpp"
 
 class Requester {
 private:
-    Chronometre chronometre;
+    System& system; // Référence vers le système complexe
+    Chronometre chronometre; // Chronomètre pour mesurer le temps de traitement
 
 public:
+    Requester(System& sys) : system(sys) {}
+
     void sendRequest(Request& request);
     void receiveResponse(Request& request);
 };
